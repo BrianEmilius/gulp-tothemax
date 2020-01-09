@@ -1,7 +1,7 @@
 {
-  "name": "gulp-intro",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@emilius/gulp-boilerplate",
+  "version": "0.1.0",
+  "description": "Super simple boilerplate for Gulp",
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
@@ -14,8 +14,8 @@
   },
   "bugs": "https://github.com/BrianEmilius/gulp-tothemax/issues",
   "homepage": "https://github.com/BrianEmilius/gulp-tothemax#readme",
-  "keywords": [],
-  "author": "",
+  "keywords": ["gulp", "sass", "pug", "imagemin", "babel", "boilerplate"],
+  "author": "Brian Emilius <brian@brianemilius.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.7.7",
