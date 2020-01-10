@@ -1,6 +1,7 @@
 var fs = require("fs");
 var path = require("path");
 var mkdir = require("mkdirp");
+var { execSync } = require("child_process");
 
 var TEMPLATE_DIR = path.join(__dirname, "pkg");
 var MODE_0666 = parseInt('0755', 8);
@@ -17,7 +18,9 @@ function copyFile(from, to) {
 function copyFileMulti(fromDir, toDir) {
 	fs.readdirSync(path.join(TEMPLATE_DIR, fromDir))
 		.forEach(function(file) {
-			copyFile(path.join(fromDir, file), path.join(toDir, file));
+			if (fs.lstatSync(path.join(TEMPLATE_DIR, fromDir, file)).isFile()) {
+				copyFile(path.join(fromDir, file), path.join(toDir, file));
+			}
 		});
 }
 
@@ -42,7 +45,7 @@ copyFileMulti("src/images", "./src/images");
 copyFileMulti("src/media", "./src/media");
 copyFile("gulpfile.js", "./gulpfile.js");
 
-var package = require("./package");
+/* var package = JSON.parse(require("./package"));
 
 package.devDependencies = {
 	"@babel/core": "^7.7.7",
@@ -61,4 +64,5 @@ package.devDependencies = {
 	"imagemin-jpeg-recompress": "^6.0.0"
 };
 
-write("./package.json", package);
+write("./package.json", JSON.stringify(package)); */
+
