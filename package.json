@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "Super simple boilerplate for Gulp",
   "main": "index.js",
+  "bin": {
+    "init": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BrianEmilius/gulp-tothemax.git"
