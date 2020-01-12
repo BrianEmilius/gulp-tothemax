@@ -4,7 +4,7 @@
   "description": "Super simple boilerplate for Gulp",
   "main": "index.js",
   "bin": {
-    "init": "node index.js"
+    "init": "./index.js"
   },
   "repository": {
     "type": "git",
